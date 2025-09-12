@@ -1,0 +1,1901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GraphicSolution.lk - Professional Graphic Design Services | Nishan Madhushan</title>
+    <meta name="description" content="Professional graphic design services in Sri Lanka and Kuwait. Logo design, branding, social media graphics, packaging design and more. 10+ years experience.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 2px 30px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 2.2rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+            animation: logoGlow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes logoGlow {
+            from { filter: drop-shadow(0 0 5px rgba(102, 126, 234, 0.3)); }
+            to { filter: drop-shadow(0 0 15px rgba(102, 126, 234, 0.6)); }
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+            transform: translateY(-2px);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        /* Mobile menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #333;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 140px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero .subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .hero .description {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            opacity: 0.85;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .cta-button {
+            background: #ff6b6b;
+            color: white;
+            padding: 18px 35px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(255, 107, 107, 0.4);
+        }
+
+        .cta-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .cta-secondary:hover {
+            background: white;
+            color: #667eea;
+            box-shadow: 0 15px 35px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Stats Section */
+        .stats {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 60px 0;
+            margin-top: -50px;
+            position: relative;
+            z-index: 3;
+            border-radius: 30px 30px 0 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #667eea;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: #666;
+            font-weight: 600;
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 3rem;
+            color: #333;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .about-text h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            margin: 15px 0;
+            border-radius: 2px;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .about-features {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .about-features li {
+            padding: 10px 0;
+            color: #555;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .about-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .about-image {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-image::before {
+            content: '🎨';
+            font-size: 6rem;
+            display: block;
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+            position: relative;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 4rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 25px;
+            padding: 3rem 2rem;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            border-color: #667eea;
+        }
+
+        .service-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 2.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #333;
+            text-align: center;
+        }
+
+        .service-card .service-description {
+            color: #666;
+            margin-bottom: 2rem;
+            text-align: center;
+            line-height: 1.7;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .service-features li {
+            padding: 8px 0;
+            color: #555;
+            position: relative;
+            padding-left: 25px;
+            font-size: 0.95rem;
+        }
+
+        .service-features li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .price-container {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 15px;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #667eea;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .price-local {
+            font-size: 1.3rem;
+            color: #888;
+            margin-bottom: 10px;
+        }
+
+        .price-note {
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        .order-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            width: 100%;
+            font-size: 1.1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .order-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .order-btn:hover::before {
+            left: 100%;
+        }
+
+        .order-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .portfolio-filter {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 2px solid #667eea;
+            color: #667eea;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .portfolio-item {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .portfolio-item:hover {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .portfolio-placeholder {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3rem;
+            font-weight: bold;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portfolio-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        .portfolio-info {
+            padding: 2rem;
+        }
+
+        .portfolio-info h4 {
+            margin-bottom: 1rem;
+            color: #333;
+            font-size: 1.3rem;
+        }
+
+        .portfolio-info p {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .portfolio-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .portfolio-tag {
+            background: #667eea;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 30px;
+            font-size: 6rem;
+            color: #667eea;
+            opacity: 0.2;
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .author-info h5 {
+            color: #333;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+
+        .author-info span {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Process Section */
+        .process {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+            padding: 2rem;
+        }
+
+        .process-step::after {
+            content: '';
+            position: absolute;
+            top: 50px;
+            right: -50%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            z-index: -1;
+        }
+
+        .process-step:last-child::after {
+            display: none;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .process-step h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .process-step p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="white" opacity="0.1"/><circle cx="80" cy="40" r="1.5" fill="white" opacity="0.1"/><circle cx="40" cy="70" r="1" fill="white" opacity="0.1"/></svg>');
+        }
+
+        .contact-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .contact-method {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-method:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.2);
+        }
+
+        .contact-method-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .contact-method h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-method p {
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+
+        .whatsapp-btn, .email-btn {
+            background: #25D366;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin: 0.5rem;
+        }
+
+        .email-btn {
+            background: #4285F4;
+        }
+
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+        }
+
+        .email-btn:hover {
+            background: #3367D6;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(66, 133, 244, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 3rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            line-height: 1.6;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #667eea;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            color: #999;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: #333;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: #667eea;
+            transform: translateY(-3px);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .process-step::after {
+                display: none;
+            }
+            
+            .contact-methods {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .service-card {
+                padding: 2rem 1.5rem;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Loading and Scroll Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 1000;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">GraphicSolution.lk</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn">☰</button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Professional Graphic Design Solutions</h1>
+                <p class="subtitle">Nishan Madhushan - 10+ Years Experience</p>
+                <p class="description">Creating stunning visuals that elevate your brand to the next level. From logo design to complete brand identity, we bring your vision to life with creativity and precision.</p>
+                <div class="hero-buttons">
+                    <a href="#services" class="cta-button">View Our Services</a>
+                    <a href="#portfolio" class="cta-button cta-secondary">See Our Work</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item fade-in">
+                    <span class="stat-number">500+</span>
+                    <span class="stat-label">Projects Completed</span>
+                </div>
+                <div class="stat-item fade-in">
+                    <span class="stat-number">10+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-item fade-in">
+                    <span class="stat-number">98%</span>
+                    <span class="stat-label">Client Satisfaction</span>
+                </div>
+                <div class="stat-item fade-in">
+                    <span class="stat-number">24hr</span>
+                    <span class="stat-label">Quick Turnaround</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <h2>About Nishan Madhushan</h2>
+                    <p>I am a passionate Graphic Designer with over a decade of experience in the field. I have a solid educational background, having studied Graphic Design at a government institute in Sri Lanka.</p>
+                    
+                    <p>Currently serving as Personal Graphic Designer to the Minister at the Ministry of Trade, Sri Lanka, while also running my freelance design business serving clients worldwide from Kuwait and Sri Lanka.</p>
+
+                    <ul class="about-features">
+                        <li>Government Institute Certified Designer</li>
+                        <li>Adobe Photoshop & CorelDRAW Expert</li>
+                        <li>Strong knowledge of design principles</li>
+                        <li>Specializes in brand identity & visual communications</li>
+                        <li>Experience across multiple industries</li>
+                        <li>Available for both local and international projects</li>
+                    </ul>
+
+                    <p><strong>Based in:</strong> Kuwait & Sri Lanka<br>
+                    <strong>Languages:</strong> English, Sinhala<br>
+                    <strong>Availability:</strong> 7 days a week</p>
+                </div>
+                <div class="about-image fade-in">
+                    <div>Professional Graphic Designer</div>
+                    <h3>Nishan Madhushan</h3>
+                    <p>Bringing your vision to life through creative design solutions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title fade-in">Our Design Services</h2>
+            <p class="section-subtitle fade-in">Professional graphic design solutions tailored to your business needs</p>
+            
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">🎨</div>
+                    <h3>Logo Design & Branding</h3>
+                    <p class="service-description">Professional logo designs and complete brand identity packages that capture your business essence and make lasting impressions.</p>
+                    
+                    <ul class="service-features">
+                        <li>Multiple logo concepts & revisions</li>
+                        <li>Brand color palette & typography</li>
+                        <li>Logo variations & formats</li>
+                        <li>Brand guidelines document</li>
+                        <li>High-resolution files (AI, EPS, PNG, JPG)</li>
+                        <li>Commercial usage rights</li>
+                    </ul>
+                    
+                    <div class="price-container">
+                        <div class="price">$165 USD</div>
+                        <div class="price-local">LKR 50,000 (Sri Lanka)</div>
+                        <div class="price-note">Complete logo & brand package</div>
+                    </div>
+                    
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                        <input type="hidden" name="cmd" value="_xclick">
+                        <input type="hidden" name="business" value="nishan.wk@gmail.com">
+                        <input type="hidden" name="item_name" value="Logo Design & Branding Package">
+                        <input type="hidden" name="amount" value="165">
+                        <input type="hidden" name="currency_code" value="USD">
+                        <button type="submit" class="order-btn">💳 Order Now via PayPal</button>
+                    </form>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon">📋</div>
+                    <h3>Business Profile & Corporate Design</h3>
+                    <p class="service-description">Complete business profile design including company brochures, presentations, and corporate identity materials.</p>
+                    
+                    <ul class="service-features">
+                        <li>Company profile design (8-12 pages)</li>
+                        <li>Business brochure design</li>
+                        <li>Corporate presentation templates</li>
+                        <li>Letterhead & business card design</li>
+                        <li>Professional layout & typography</li>
+                        <li>Print-ready & digital formats</li>
+                    </ul>
+                    
+                    <div class="price-container">
+                        <div class="price">$495 USD</div>
+                        <div class="price-local">LKR 150,000 (Sri Lanka)</div>
+                        <div class="price-note">Complete corporate package</div>
+                    </div>
+                    
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                        <input type="hidden" name="cmd" value="_xclick">
+                        <input type="hidden" name="business" value="nishan.wk@gmail.com">
+                        <input type="hidden" name="item_name" value="Business Profile & Corporate Design">
+                        <input type="hidden" name="amount" value="495">
+                        <input type="hidden" name="currency_code" value="USD">
+                        <button type="submit" class="order-btn">💳 Order Now via PayPal</button>
+                    </form>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon">📱</div>
+                    <h3>Social Media Graphics</h3>
+                    <p class="service-description">Eye-catching social media graphics optimized for all platforms to boost engagement and brand visibility.</p>
+                    
+                    <ul class="service-features">
+                        <li>Facebook, Instagram, Twitter posts</li>
+                        <li>Story templates & highlights</li>
+                        <li>Cover photos & banners</li>
+                        <li>Promotional graphics</li>
+                        <li>Event announcements</li>
+                        <li>Platform-optimized sizes</li>
+                    </ul>
+                    
+                    <div class="price-container">
+                        <div class="price">$23 USD</div>
+                        <div class="price-local">LKR 7,000 (Sri Lanka)</div>
+                        <div class="price-note">Per social media post design</div>
+                    </div>
+                    
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                        <input type="hidden" name="cmd" value="_xclick">
+                        <input type="hidden" name="business" value="nishan.wk@gmail.com">
+                        <input type="hidden" name="item_name" value="Social Media Graphics Package">
+                        <input type="hidden" name="amount" value="23">
+                        <input type="hidden" name="currency_code" value="USD">
+                        <button type="submit" class="order-btn">💳 Order Now via PayPal</button>
+                    </form>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon">📦</div>
+                    <h3>Package & Label Design</h3>
+                    <p class="service-description">Creative packaging and label designs that make your products stand out on shelves and attract customers.</p>
+                    
+                    <ul class="service-features">
+                        <li>Product packaging design</li>
+                        <li>Label & sticker design</li>
+                        <li>Box & container design</li>
+                        <li>Nutritional & ingredient panels</li>
+                        <li>Print specifications & die-lines</li>
+                        <li>Multiple format delivery</li>
+                    </ul>
+                    
+                    <div class="price-container">
+                        <div class="price">$165 USD</div>
+                        <div class="price-local">LKR 50,000 (Sri Lanka)</div>
+                        <div class="price-note">Complete packaging solution</div>
+                    </div>
+                    
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                        <input type="hidden" name="cmd" value="_xclick">
+                        <input type="hidden" name="business" value="nishan.wk@gmail.com">
+                        <input type="hidden" name="item_name" value="Package & Label Design">
+                        <input type="hidden" name="amount" value="165">
+                        <input type="hidden" name="currency_code" value="USD">
+                        <button type="submit" class="order-btn">💳 Order Now via PayPal</button>
+                    </form>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon">🎪</div>
+                    <h3>Event & Marketing Materials</h3>
+                    <p class="service-description">Professional event graphics, flyers, posters and marketing materials for successful promotions.</p>
+                    
+                    <ul class="service-features">
+                        <li>Event poster & flyer design</li>
+                        <li>Banner & billboard design</li>
+                        <li>Festival & concert graphics</li>
+                        <li>Promotional materials</li>
+                        <li>Advertisement layouts</li>
+                        <li>Print & digital formats</li>
+                    </ul>
+                    
+                    <div class="price-container">
+                        <div class="price">$99 USD</div>
+                        <div class="price-local">LKR 30,000 (Sri Lanka)</div>
+                        <div class="price-note">Per marketing material</div>
+                    </div>
+                    
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                        <input type="hidden" name="cmd" value="_xclick">
+                        <input type="hidden" name="business" value="nishan.wk@gmail.com">
+                        <input type="hidden" name="item_name" value="Event & Marketing Materials">
+                        <input type="hidden" name="amount" value="99">
+                        <input type="hidden" name="currency_code" value="USD">
+                        <button type="submit" class="order-btn">💳 Order Now via PayPal</button>
+                    </form>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon">🖼️</div>
+                    <h3>Photo Enhancement & Digital Art</h3>
+                    <p class="service-description">Professional photo editing, enhancement, digital art creation and image manipulation services.</p>
+                    
+                    <ul class="service-features">
+                        <li>Photo restoration & enhancement</li>
+                        <li>Image upscaling & quality improvement</li>
+                        <li>Background removal & replacement</li>
+                        <li>Cartoon & vector illustrations</li>
+                        <li>NFT artwork creation</li>
+                        <li>Digital art & graphics</li>
+                    </ul>
+                    
+                    <div class="price-container">
+                        <div class="price">$33 USD</div>
+                        <div class="price-local">LKR 10,000 (Sri Lanka)</div>
+                        <div class="price-note">Per image/artwork</div>
+                    </div>
+                    
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                        <input type="hidden" name="cmd" value="_xclick">
+                        <input type="hidden" name="business" value="nishan.wk@gmail.com">
+                        <input type="hidden" name="item_name" value="Photo Enhancement & Digital Art">
+                        <input type="hidden" name="amount" value="33">
+                        <input type="hidden" name="currency_code" value="USD">
+                        <button type="submit" class="order-btn">💳 Order Now via PayPal</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <h2 class="section-title fade-in">Our Creative Portfolio</h2>
+            <p class="section-subtitle fade-in">Explore our latest projects and creative solutions</p>
+            
+            <div class="portfolio-filter fade-in">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="logo">Logo Design</button>
+                <button class="filter-btn" data-filter="branding">Branding</button>
+                <button class="filter-btn" data-filter="social">Social Media</button>
+                <button class="filter-btn" data-filter="packaging">Packaging</button>
+                <button class="filter-btn" data-filter="events">Events</button>
+            </div>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item fade-in" data-category="logo">
+                    <div class="portfolio-placeholder">NSK Alora Beauty Logo</div>
+                    <div class="portfolio-info">
+                        <h4>NSK Alora Beauty Products</h4>
+                        <p>Complete brand identity design for beauty product company featuring elegant typography and modern aesthetics.</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Logo Design</span>
+                            <span class="portfolio-tag">Beauty</span>
+                            <span class="portfolio-tag">Branding</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item fade-in" data-category="branding">
+                    <div class="portfolio-placeholder">RU ART CREATION</div>
+                    <div class="portfolio-info">
+                        <h4>RU ART Creation Studio</h4>
+                        <p>Creative studio branding with artistic elements and modern typography design approach.</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Branding</span>
+                            <span class="portfolio-tag">Creative</span>
+                            <span class="portfolio-tag">Studio</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item fade-in" data-category="logo">
+                    <div class="portfolio-placeholder">OLS Education Academy</div>
+                    <div class="portfolio-info">
+                        <h4>OLS Education Academy</h4>
+                        <p>Online language school logo design with educational theme and professional appearance.</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Logo</span>
+                            <span class="portfolio-tag">Education</span>
+                            <span class="portfolio-tag">Online</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item fade-in" data-category="events">
+                    <div class="portfolio-placeholder">Music Festival Poster</div>
+                    <div class="portfolio-info">
+                        <h4>Aura Lanka Music Festival</h4>
+                        <p>Event poster design for outdoor music festival featuring vibrant colors and dynamic layout.</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Event</span>
+                            <span class="portfolio-tag">Festival</span>
+                            <span class="portfolio-tag">Music</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item fade-in" data-category="social">
+                    <div class="portfolio-placeholder">Social Media Campaign</div>
+                    <div class="portfolio-info">
+                        <h4>Beauty Products Social Campaign</h4>
+                        <p>Social media graphics series for beauty product promotions with elegant and attractive designs.</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Social Media</span>
+                            <span class="portfolio-tag">Beauty</span>
+                            <span class="portfolio-tag">Campaign</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item fade-in" data-category="packaging">
+                    <div class="portfolio-placeholder">Product Label Design</div>
+                    <div class="portfolio-info">
+                        <h4>Herbal Products Label</h4>
+                        <p>Natural herbal products label design with organic aesthetics and product information layout.</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Packaging</span>
+                            <span class="portfolio-tag">Herbal</span>
+                            <span class="portfolio-tag">Natural</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item fade-in" data-category="branding">
+                    <div class="portfolio-placeholder">Photography Studio Brand</div>
+                    <div class="portfolio-info">
+                        <h4>Photography Studio Branding</h4>
+                        <p>Complete branding package for photography studio including logo, business cards and promotional materials.</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Branding</span>
+                            <span class="portfolio-tag">Photography</span>
+                            <span class="portfolio-tag">Studio</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item fade-in" data-category="logo">
+                    <div class="portfolio-placeholder">Pet Fish Aquarium</div>
+                    <div class="portfolio-info">
+                        <h4>Pet Fish Aquarium Distributors</h4>
+                        <p>Aquarium business logo design with aquatic theme and professional presentation.</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Logo</span>
+                            <span class="portfolio-tag">Aquarium</span>
+                            <span class="portfolio-tag">Business</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process" id="process">
+        <div class="container">
+            <h2 class="section-title fade-in">Our Design Process</h2>
+            <p class="section-subtitle fade-in">How we transform your ideas into stunning visual solutions</p>
+            
+            <div class="process-steps">
+                <div class="process-step fade-in">
+                    <div class="step-number">1</div>
+                    <h4>Consultation & Brief</h4>
+                    <p>We start with understanding your needs, brand vision, and project requirements through detailed consultation.</p>
+                </div>
+                
+                <div class="process-step fade-in">
+                    <div class="step-number">2</div>
+                    <h4>Concept Development</h4>
+                    <p>Creating initial design concepts and ideas based on your brief and brand guidelines.</p>
+                </div>
+                
+                <div class="process-step fade-in">
+                    <div class="step-number">3</div>
+                    <h4>Design & Creation</h4>
+                    <p>Developing the chosen concept into final designs using professional tools and techniques.</p>
+                </div>
+                
+                <div class="process-step fade-in">
+                    <div class="step-number">4</div>
+                    <h4>Review & Revisions</h4>
+                    <p>Presenting the designs for your feedback and implementing any requested revisions.</p>
+                </div>
+                
+                <div class="process-step fade-in">
+                    <div class="step-number">5</div>
+                    <h4>Final Delivery</h4>
+                    <p>Delivering final files in all required formats with full usage rights and documentation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title fade-in">What Our Clients Say</h2>
+            <p class="section-subtitle fade-in">Real feedback from satisfied customers worldwide</p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <p class="testimonial-text">
+                        "Nishan delivered exceptional logo design for our beauty brand. The attention to detail and creative approach exceeded our expectations. Highly recommended for professional branding work."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">NS</div>
+                        <div class="author-info">
+                            <h5>NSK Alora Beauty</h5>
+                            <span>Beauty Products Company</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card fade-in">
+                    <p class="testimonial-text">
+                        "Working with GraphicSolution.lk was a great experience. The designs were creative, professional, and delivered on time. Perfect for our marketing campaigns."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MT</div>
+                        <div class="author-info">
+                            <h5>Ministry of Trade</h5>
+                            <span>Government Sector</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card fade-in">
+                    <p class="testimonial-text">
+                        "Excellent service for event promotions. The festival poster design was vibrant and eye-catching, resulting in great audience response. Will definitely work again."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AL</div>
+                        <div class="author-info">
+                            <h5>Aura Lanka Entertainment</h5>
+                            <span>Event Management</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-content">
+                <h2 class="fade-in">Let's Create Something Amazing Together</h2>
+                <p class="contact-subtitle fade-in">Ready to elevate your brand? Get in touch with us today for professional graphic design solutions!</p>
+                
+                <div class="contact-methods fade-in">
+                    <div class="contact-method">
+                        <span class="contact-method-icon">📧</span>
+                        <h4>Email</h4>
+                        <p>For detailed project discussions</p>
+                        <a href="mailto:nishan.wk@gmail.com" class="email-btn">✉️ nishan.wk@gmail.com</a>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <span class="contact-method-icon">📱</span>
+                        <h4>WhatsApp</h4>
+                        <p>For quick consultations & updates</p>
+                        <a href="https://wa.me/96566336187" class="whatsapp-btn" target="_blank">
+                            💬 +965 66 33 61 87 (Kuwait)
+                        </a>
+                        <a href="https://wa.me/94760022881" class="whatsapp-btn" target="_blank">
+                            💬 +94 76 00 22 881 (Sri Lanka)
+                        </a>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <span class="contact-method-icon">🌍</span>
+                        <h4>Location</h4>
+                        <p>Serving clients globally</p>
+                        <p>📍 Farwaniya, Block 06, Kuwait<br>
+                        📍 Colombo, Sri Lanka</p>
+                    </div>
+                </div>
+                
+                <div class="fade-in" style="margin-top: 3rem;">
+                    <h3>Business Hours</h3>
+                    <p>Monday - Sunday: 9:00 AM - 11:00 PM (Kuwait Time)<br>
+                    Available for urgent projects 24/7</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>GraphicSolution.lk</h4>
+                    <p>Professional graphic design services with over 10 years of experience. Specialized in logo design, branding, social media graphics, and complete visual identity solutions.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/RuArtOfficialPage" class="social-link" target="_blank">📘</a>
+                        <a href="mailto:nishan.wk@gmail.com" class="social-link">✉️</a>
+                        <a href="https://wa.me/96566336187" class="social-link" target="_blank">💬</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Our Services</h4>
+                    <p><a href="#services">Logo Design & Branding</a></p>
+                    <p><a href="#services">Business Profile Design</a></p>
+                    <p><a href="#services">Social Media Graphics</a></p>
+                    <p><a href="#services">Package & Label Design</a></p>
+                    <p><a href="#services">Event Marketing Materials</a></p>
+                    <p><a href="#services">Photo Enhancement</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Information</h4>
+                    <p>📧 nishan.wk@gmail.com</p>
+                    <p>📱 +965 66 33 61 87 (Kuwait)</p>
+                    <p>📱 +94 76 00 22 881 (Sri Lanka)</p>
+                    <p>🌐 www.graphicsolution.lk</p>
+                    <p>📍 Kuwait & Sri Lanka</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Why Choose Us?</h4>
+                    <p>✓ 10+ Years Experience</p>
+                    <p>✓ 500+ Projects Completed</p>
+                    <p>✓ Government Certified</p>
+                    <p>✓ Quick Turnaround</p>
+                    <p>✓ Worldwide Service</p>
+                    <p>✓ Affordable Pricing</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 GraphicSolution.lk - Nishan Madhushan. All rights reserved.</p>
+                <p>Professional Graphic Design Services | Kuwait & Sri Lanka</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop">↑</button>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+
+        // Header background change on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            const scrollTop = document.getElementById('scrollTop');
+            
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 5px 30px rgba(0,0,0,0.15)';
+                scrollTop.classList.add('visible');
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = '0 2px 30px rgba(0,0,0,0.1)';
+                scrollTop.classList.remove('visible');
+            }
+        });
+
+        // Scroll to top functionality
+        document.getElementById('scrollTop').addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Portfolio Filter Functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                portfolioItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.style.display = 'block';
+                        item.style.opacity = '0';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'scale(1)';
+                        }, 100);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'scale(0.8)';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // Counter Animation for Stats
+        function animateCounter(element, target) {
+            let current = 0;
+            const increment = target / 100;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target + (element.textContent.includes('+') ? '+' : '') + 
+                                        (element.textContent.includes('%') ? '%' : '') + 
+                                        (element.textContent.includes('hr') ? 'hr' : '');
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current) + (element.textContent.includes('+') ? '+' : '') + 
+                                        (element.textContent.includes('%') ? '%' : '') + 
+                                        (element.textContent.includes('hr') ? 'hr' : '');
+                }
+            }, 20);
+        }
+
+        // Animate counters when stats section is visible
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumbers = entry.target.querySelectorAll('.stat-number');
+                    statNumbers.forEach(num => {
+                        const target = parseInt(num.textContent);
+                        if (!isNaN(target)) {
+                            animateCounter(num, target);
+                        }
+                    });
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const statsSection = document.querySelector('.stats');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+
+        // Service card hover effects
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-15px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Loading animation for page
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '1';
+            document.body.style.transition = 'opacity 0.5s ease-in-out';
+        });
+
+        // WhatsApp floating button (optional)
+        function createFloatingWhatsApp() {
+            const whatsappFloat = document.createElement('div');
+            whatsappFloat.innerHTML = `
+                <a href="https://wa.me/96566336187" target="_blank" 
+                   style="position: fixed; bottom: 100px; right: 30px; 
+                          background: #25D366; color: white; 
+                          width: 60px; height: 60px; border-radius: 50%; 
+                          display: flex; align-items: center; justify-content: center; 
+                          font-size: 1.5rem; text-decoration: none; 
+                          box-shadow: 0 5px 20px rgba(37, 211, 102, 0.3); 
+                          z-index: 999; transition: all 0.3s ease;
+                          animation: pulse 2s infinite;">
+                    💬
+                </a>
+                <style>
+                    @keyframes pulse {
+                        0% { transform: scale(1); }
+                        50% { transform: scale(1.1); }
+                        100% { transform: scale(1); }
+                    }
+                </style>
+            `;
+            document.body.appendChild(whatsappFloat);
+        }
+
+        // Uncomment to add floating WhatsApp button
+        // createFloatingWhatsApp();
+
+        // Form submission handling for PayPal (if needed)
+        document.querySelectorAll('form[action*="paypal"]').forEach(form => {
+            form.addEventListener('submit', (e) => {
+                // Add loading state
+                const btn = form.querySelector('.order-btn');
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '⏳ Processing...';
+                btn.disabled = true;
+                
+                // Re-enable after 3 seconds (in case user comes back)
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.disabled = false;
+                }, 3000);
+            });
+        });
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+
+        // Dynamic copyright year
+        const currentYear = new Date().getFullYear();
+        const copyrightElements = document.querySelectorAll('.footer-bottom p');
+        copyrightElements.forEach(el => {
+            if (el.textContent.includes('2024')) {
+                el.textContent = el.textContent.replace('2024', currentYear);
+            }
+        });
+
+        // Easter egg: Konami code activation
+        let konamiCode = [];
+        const konamiSequence = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]; // ↑↑↓↓←→←→BA
+
+        document.addEventListener('keydown', (e) => {
+            konamiCode.push(e.keyCode);
+            if (konamiCode.length > konamiSequence.length) {
+                konamiCode.shift();
+            }
+            
+            if (konamiCode.length === konamiSequence.length && 
+                konamiCode.every((key, index) => key === konamiSequence[index])) {
+                
+                // Easter egg activation
+                document.body.style.filter = 'hue-rotate(180deg)';
+                setTimeout(() => {
+                    document.body.style.filter = 'none';
+                    alert('🎨 You found the designer\'s secret! Thanks for exploring GraphicSolution.lk! 🎨');
+                }, 2000);
+                konamiCode = [];
+            }
+        });
+
+        console.log('%c🎨 Welcome to GraphicSolution.lk! 🎨', 'color: #667eea; font-size: 24px; font-weight: bold;');
+        console.log('%cDesigned & Developed by Nishan Madhushan', 'color: #764ba2; font-size: 16px;');
+        console.log('%c✨ Professional Graphic Design Services ✨', 'color: #ff6b6b; font-size: 14px;');
+    </script>
+</body>
+</html>
